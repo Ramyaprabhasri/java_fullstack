@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+<style>
+    body{
+        background-image: url(./bg.jpg);
+        background-size: cover;
+    }
+    table{
+        border: 1px solid rgb(255, 247, 247);
+        width: 400px;
+        position: absolute;
+        top: 250px;
+        left: 600px ;
+        border-radius: 6px;
+        height: 200px;
+
+    }
+    .button{
+        width: 75px;
+        height: 25px;
+        background-color: rgb(219, 221, 200);
+        color: rgb(20, 20, 19);
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    .border{
+        border: 1px solid  rgb(255, 247, 247);
+        border-radius: 20px;
+    }
+    #color{
+        color:rgb(255, 247, 247) ;
+    }
+</style>
+
+<body>
+  
+    <br><br>
+    <table >
+        <tr>
+            <th colspan="2" id="color">Login Page</th>
+        </tr>
+        <tr align="center">
+            <td id="color">Username:</td><br>
+            <td > <input type="text" placeholder="Enter your username" class="border"></td>
+           
+        </tr>
+    
+        <tr align="center">
+            <td id="color">Password:</td><td><input type="password" placeholder="Enter your password" class="border"></td>
+        </tr>
+      
+        <tr>
+            <td colspan="2" align="center"><input type="submit" value="Login" class="button"></td>
+        </tr>
+
+        <tr><td align="center" colspan="2" id="color">Not registered?<a href="reg.html">Create an account!</a></td></tr>
+    </table>
+</body>
+</html>

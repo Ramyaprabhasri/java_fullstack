@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registration page</title>
+</head>
+<style>
+    body{
+        background-image: url(./bg.jpg);
+    }
+      table{
+        border: 1px solid rgb(255, 247, 247);
+        width: 600px;
+        position: absolute;
+        top: 75px;
+        left: 500px ;
+        border-radius: 6px;
+        height: 200px;
+
+    }
+    .button{
+        width: 75px;
+        height: 25px;
+        background-color: rgb(219, 221, 200);
+        color: rgb(20, 20, 19);
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    .border{
+        border: 1px solid  rgb(255, 247, 247);
+        border-radius: 20px;
+    }
+    #color{
+        color:rgb(255, 247, 247) ;
+    }
+
+</style>
+<body>
+    <br><br>
+    <table  >
+        <tr>
+            <th colspan="2" id="color"><h2>Register here!</h2></th>
+        </tr>
+        <tr>
+            <td  id="color">First Name:</td>
+            <td><input type="text" placeholder="Enter your first name" class="border"></td>
+        </tr>
+        <tr>
+            <td  id="color">Last Name:</td>
+        <td><input type="text" placeholder="Enter your last name" class="border"></td>
+    </tr>
+    <tr>
+        <td  id="color">Email:</td>
+        <td><input type="email" placeholder="Enter your email" class="border"></td>
+    </tr>
+    <tr>
+        <td  id="color">Mobile number:</td>
+        <td><input type="number" placeholder="Enter your moobile no."  class="border"></td>
+    </tr>
+    <tr>
+        <td  id="color">Date of Birth:</td>
+        <td><input type="date"  class="border"></td>
+    </tr>
+    <tr>
+        <td  id="color">Username:</td>
+        <td><input type="text" placeholder="Enter your username"  class="border"></td>
+    </tr>
+    <tr>
+        <td  id="color">Password:</td>
+        <td><input type="password" placeholder="Enter your password"  class="border"></td>
+    </tr>
+    <tr>
+        <td  id="color">Gender:</td>
+        <td><input type="radio" name="gender">
+        <label for="male"  id="color">Male</label>
+        <input type="radio" name="gender">
+            <label for="female"  id="color">Female</label></td>
+        
+    </tr>
+    <tr>
+        <td  id="color">Skills:</td>
+        <td><input type="checkbox" name="skills">
+            <label for="skills"  id="color">C</label>
+            <input type="checkbox" name="skills" >
+            <label for="skills"  id="color">C++</label>
+            <input type="checkbox" name="skills">
+            <label for="skills"  id="color">Java</label>
+        </td>
+       
+    </tr>
+    <tr>
+        <td  id="color" >City:</td>
+        <td><select name="city"  class="border">
+            <option value="salem">Salem</option>
+            <option value="erode">Erode</option>
+            <option value="namakkal">Namakkal</option>
+            <option value="cbe">Coimbatore</option>
+            <option value="chennai">Chennai</option>
+ </select></td>
+    </tr>
+    <tr>
+        <td  id="color">Address:</td>
+        <td><textarea id="address" name="address" rows="5" cols="50" ></textarea></td>
+    </tr>
+    <td align="center" colspan="2"><input type="submit" value="Register" class="button"></td></tr>
+    <tr>
+        <td align="center" colspan="2"  id="color">Already have an account?<a href="loginpage.html">Login here!</a></td>
+    </tr>
+    </table>
+</body>
+</html>
