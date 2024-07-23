@@ -1,0 +1,105 @@
+
+
+
+.projects{
+    margin-left: 75px;
+    text-align: justify;
+    width: 100%;
+    margin-right: 10px;
+
+}
+.internships{
+    margin-left: 20px;
+    text-align: justify;
+    width: 100%;
+}
+.bio{
+    display: flex;
+}
+
+.data{
+    margin-left: 175px;
+    font-size: 25px;
+}
+
+
+.education{
+    margin-left: 75px;
+
+}
+table,th,td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th{
+    background-color: rgb(116, 233, 233);
+    font-weight: bolder;
+    font-size: large;
+}
+
+i{
+    font-size: 25px;
+}
+
+.left{
+    display: flex;
+}
+a{
+    text-decoration: none;
+    color: rgb(74, 141, 242);
+}
+a:hover{
+    color: black;
+}
+.flex1{
+    display: flex;
+}
+
+.flex2{
+    display: flex;
+}
+.activities{
+    margin-left: 75px;
+    width: 100%;
+    margin-right: 10px;
+
+}
+.languages{
+    width: 100%;
+    margin-left: 20px;
+}
+.skillsets{
+    margin-left: 75px;
+    width: 100%;
+    margin-right: 10px;
+}
+.certifications{
+    margin-left: 20px;
+    width: 100%;
+    text-align: justify;
+    margin-right: 10px;
+
+}
+.objective{
+    width: 100%;
+    margin-left: 75px;
+    margin-right: 10px;
+}
+.interest{
+    margin-left: 20px;
+    width: 100%;
+    text-align: justify;
+    margin-right: 10px;
+}
+
+
+.skill2{
+    margin-left: 150px;
+    margin-top: 40px;
+}
+.linkedin{
+    width: 25%;
+}
+.git{
+    width: 50%;
+}
