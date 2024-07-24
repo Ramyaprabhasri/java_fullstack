@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+    <script>
+        function calculate() {
+        var a=document.getElementById("n1").value;
+        let flag = true;
+        const len = a.length;
+        let result="";
+        
+        for(let i=0;i<len/2;i++){
+        if(a.charAt(i)!=a.charAt(len-i-1)){
+            flag=false;
+        }
+        else{
+            flag=true;
+        }
+    }
+    
+        
+        if(flag){
+            result="Palindrome";
+        }
+        else {
+            result="Not a Palindrome";
+        }
+
+     document.getElementById("resultdiv").innerHTML = "<b>Result: "+result + "</b>";
+    }
+        
+    </script>
+</head>
+<body>
+    Enter the string<input type="text" id="n1"/><br>
+    <br>
+    <button onclick="calculate()">Calculate</button><br>
+    <div id="resultdiv">
+
+    </div>
+</body>
+</html>

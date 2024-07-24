@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime </title>
+    <script>
+        function calculate() {
+        var a=parseInt(document.getElementById("n1").value);
+        let flag = true;
+        let result="";
+         if(a==1){
+            result="Neither prime nor composite";
+         }
+         if(a>1){
+        for(let i=2;i<a;i++){
+        if(a%i==0){
+            flag = false;
+            break;
+        } 
+        }
+        if(flag){
+            result="Prime number";
+        }
+        else{
+            result="Not a prime number";
+        }
+       
+    }
+     document.getElementById("resultdiv").innerHTML = "<b>Result: "+result + "</b>";
+        }
+    </script>
+</head>
+<body>
+    Enter the number<input type="text" id="n1"/><br>
+    <br>
+    <button onclick="calculate()">Calculate</button><br>
+    <div id="resultdiv">
+
+    </div>
+</body>
+</html>

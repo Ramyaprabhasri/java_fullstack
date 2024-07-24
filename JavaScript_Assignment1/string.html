@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string</title>
+    <script>
+        function calculate() {
+        var a=document.getElementById("n1").value;
+        let text=a;
+        result1="Length:" +text.length;
+        let result2="Character at index 2:" +text.charAt(2);
+        let result3 ="Slice:"+ text.slice(0,5);
+        let result4 ="Substring:"+text.substring(1,4);
+        let result5 ="Substr:"+text.substr(1,4);
+        let result6 ="Uppercase:"+text.toUpperCase();
+        let result7 = "Lowercase:"+text.toLowerCase();
+        let result8 = "Concatenation:"+text.concat(" "+"Gunasekaran");
+        let result9 = "Trim:"+text.trim();
+        let result10 = "Trim Start:"+text.trimStart();
+        let result11 = "Trim End:"+text.trimEnd();
+        let result12="Repeat:"+text.repeat(3);
+        let result13 ="Replace:"+text.replace("G","Gunasekaran");
+        let result14 ="Replace All:"+text.replaceAll("Gunasekaran","G");
+        let result15="Split:"+text.split(" ");
+
+
+
+     document.getElementById("resultdiv").innerHTML = "<b>Result: "+result1 +"<br>"+ result2 +"<br>"+ result3 +"<br>"+ result4 + "<br>"+ result5 +"<br>"+ result6 +"<br>"+ result7 +"<br>"+ result8 +"<br>"+ result9 +"<br>"+ result10 +"<br>"+ result11 +"<br>"+ result12 +"<br>"+ result13 +"<br>"+ result14 +"<br>"+ result15 +"</b>";
+    }
+        
+    </script>
+</head>
+<body>
+    Enter the string<input type="text" id="n1"/><br>
+    <br>
+    <button onclick="calculate()">Calculate</button><br>
+    <div id="resultdiv">
+
+    </div>
+</body>
+</html>
