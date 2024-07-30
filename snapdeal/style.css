@@ -1,0 +1,153 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 20px;
+    background-color: crimson;
+    height: 40px;
+    margin-bottom: 0%;
+}
+.navdiv{
+    color: whitesmoke;
+    margin-left: 41px;
+    margin-bottom: 15px;
+    height: 20px;
+    
+}
+li{
+    list-style: none;
+    display: inline-block;
+}
+li a{
+    color: whitesmoke;
+    justify-content: space-evenly;
+    font-size: 14px;
+    margin-right: 25px;
+}
+.navbar-bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #e30047;
+    height: 60px;
+}
+.logo img{
+    float: right;
+}
+.logotext{
+    display: flex;
+    margin-left: 60px;
+}
+.text{
+    font-size: 2rem;
+    align-items: center;
+    font-family: sans-serif;
+    margin-left: 15px;
+    color: white;
+}
+.searchbox #search{
+    padding: 10px;
+    margin-top: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  background: #f1f1f1;
+  width: 500px;
+  height: 42px;
+}
+.searchbox button{
+    float: left;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 14px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+    width: 150px;
+    height: 42px;
+    margin-top: 10px;
+    align-items: center;
+    background-color: black;
+}
+.cart{
+    margin-right: 50px;
+    font-size: 20px;
+}
+.cart a{
+    color:whitesmoke;
+    text-decoration: none;
+}
+.signin{
+    margin-right: 100px;
+    font-size: 20px;
+}
+.signin a{
+    color: whitesmoke;
+    text-decoration: none;
+}
+.card li{
+    border: 0px;
+    padding: 7px;
+}
+.card {
+    border: 1px solid whitesmoke;
+    width: 190px;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    margin-left: 80px;
+    margin-top: 20px;
+    box-shadow: 0px 0px 15px 2px grey;
+}
+form{
+    text-align: center;
+}
+.location{
+    border: 1px solid whitesmoke;
+    width: 300px;
+    margin-top: 20px;
+    margin-left: 30px;
+    height: fit-content;
+    box-shadow: 0px 0px 15px 2px grey;
+}
+.location #pincode{
+    width: 230px;
+    height: 30px;
+    border: none;
+    margin-bottom: 10px;
+}
+.location #submit{
+    width: 120px;
+    height: 30px;
+    margin-top: 7px;
+    margin-bottom: 10px;
+    background-color: black;
+    color: whitesmoke;
+    border: none;
+    border-radius: 3px;
+    margin-right: 25px;
+}
+.location #next{
+    width: 80px;
+    height: 30px;
+    margin-top: 7px;
+    margin-bottom: 10px;
+    background-color: whitesmoke;
+    color: grey;
+    border: none;
+
+
+}
+.carousel-item img{
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+
+
