@@ -1,0 +1,163 @@
+SQL> create table CLIENT_MASTER(Client_No varchar2(6),Name varchar2(25),City varchar2(15),Pincode number(10),Bal_due number(7));
+
+Table created.
+
+SQL> insert into CLIENT_MASTER values('C00001','SMITHA JAIN','MUMBAI',400054,15000);
+
+1 row created.
+
+SQL> insert into CLIENT_MASTER  values('C00002','VANDANA RAO','Chennai',780001,0);
+
+1 row created.
+
+SQL> insert into CLIENT_MASTER values('C00003','PREM PUJARI','MUMBAI',400057,5000);
+
+1 row created.
+
+SQL> insert into CLIENT_MASTER values('C00004','BASU NATH','MUMBAI',400056,0);
+
+1 row created.
+
+SQL> insert into CLIENT_MASTER values('C00005','RAVI SHANKAR','DELHI',100001,2000);
+
+1 row created.
+
+SQL> insert into CLIENT_MASTER values('C00006','ROOPA','MUMBAI',400050,0);
+
+1 row created.
+
+SQL> select *from CLIENT_MASTER;
+
+CLIENT NAME                      CITY               PINCODE    BAL_DUE
+------ ------------------------- --------------- ---------- ----------
+C00001 SMITHA JAIN               MUMBAI              400054      15000
+C00002 VANDANA RAO               Chennai             780001          0
+C00003 PREM PUJARI               MUMBAI              400057       5000
+C00004 BASU NATH                 MUMBAI              400056          0
+C00005 RAVI SHANKAR              DELHI               100001       2000
+C00006 ROOPA                     MUMBAI              400050          0
+
+6 rows selected.
+
+SQL> create table SALE_ORDER(Order_No varchar2(6),Order_Date date, Client_No varchar2(10),Salesman_No varchar2(10),Dely_Date date,Order_Status varchar2 (15));
+
+Table created.
+
+SQL> insert into SALE_ORDER values('O19001','12-Jan-13','C00001','S00001','20-Jan-13','In process');
+
+1 row created.
+
+SQL> nsert into SALE_ORDER values('O19002','25-Jan-13','C00002','S00002','27-Jan-13','Cancelled');
+SP2-0734: unknown command beginning "nsert into..." - rest of line ignored.
+SQL> insert into SALE_ORDER values('O19002','25-Jan-13','C00002','S00002','2
+7-Jan-13','Cancelled');
+
+1 row created.
+
+SQL> insert into SALE_ORDER values('O46865','18-Feb-13','C00003','S00003','20-Feb-13','Fulfilled');
+
+1 row created.
+
+SQL> insert into SALE_ORDER values('O19003','03-Apr-13','C00001','S00001','07-Apr-13','Fulfilled');
+
+1 row created.
+
+SQL> insert into SALE_ORDER values('O46866','20-May-13','C00004','S00002','07-Apr-13','Cancelled');
+
+1 row created.
+
+SQL> insert into SALE_ORDER values('O19008','24-May-13','C00005','S00004','26-May-13','In process');
+
+1 row created.
+
+SQL> select * from SALE_ORDER;
+select * from SALE_ORDER
+        *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> select * from sale_order;
+
+ORDER_ ORDER_DAT CLIENT_NO  SALESMAN_N DELY_DATE ORDER_STATUS
+------ --------- ---------- ---------- --------- ---------------
+O19001 12-JAN-13 C00001     S00001     20-JAN-13 In process
+O19002 25-JAN-13 C00002     S00002     27-JAN-13 Cancelled
+O46865 18-FEB-13 C00003     S00003     20-FEB-13 Fulfilled
+O19003 03-APR-13 C00001     S00001     07-APR-13 Fulfilled
+O46866 20-MAY-13 C00004     S00002     07-APR-13 Cancelled
+O19008 24-MAY-13 C00005     S00004     26-MAY-13 In process
+
+6 rows selected.
+
+SQL> select a.name,a.city from CLIENT_MASTER a join sale_order on sale_order
+.order_no in('O19003','O19002');
+
+NAME                      CITY
+------------------------- ---------------
+SMITHA JAIN               MUMBAI
+VANDANA RAO               Chennai
+PREM PUJARI               MUMBAI
+BASU NATH                 MUMBAI
+RAVI SHANKAR              DELHI
+ROOPA                     MUMBAI
+SMITHA JAIN               MUMBAI
+VANDANA RAO               Chennai
+PREM PUJARI               MUMBAI
+BASU NATH                 MUMBAI
+RAVI SHANKAR              DELHI
+
+NAME                      CITY
+------------------------- ---------------
+ROOPA                     MUMBAI
+
+12 rows selected.
+
+SQL> select name,city from CLIENT_MASTER where order_no=(select client_no from sale_order where order_no in('O19002','O19003');
+select name,city from CLIENT_MASTER where order_no=(select client_no from sale_order where order_no in('O19002','O19003')
+                                                    *
+ERROR at line 1:
+ORA-00921: unexpected end of SQL command
+
+
+SQL> select name,city from CLIENT_MASTER where order_no=(select client_no from sale_order where order_no in('O19002','O19003'));
+select name,city from CLIENT_MASTER where order_no=(select client_no from sale_order where order_no in('O19002','O19003'))
+                                          *
+ERROR at line 1:
+ORA-00904: "ORDER_NO": invalid identifier
+
+
+SQL> select name,city from CLIENT_MASTER where client_no=(select client_no f
+rom sale_order where order_no in('O19002','O19003'));
+select name,city from CLIENT_MASTER where client_no=(select client_no from sale_order where order_no in('O19002','O19003'))
+                                                     *
+ERROR at line 1:
+ORA-01427: single-row subquery returns more than one row
+
+
+SQL> select Client_Master.name,Client_Master.city from Client_Master join Sale_Order on  Client_Master.Client_No=Sale_Order.Client_No where Sale_Order.Order_no in('O19003','O19002');
+
+NAME                      CITY
+------------------------- ---------------
+SMITHA JAIN               MUMBAI
+VANDANA RAO               Chennai
+
+SQL> select client_master.name,client_master.city,client_master.pincode join
+ sale_order on sale_order.order_status='In process';
+select client_master.name,client_master.city,client_master.pincode join sale_order on sale_order.order_status='In process'
+                                                                        *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected
+
+
+SQL> select Client_Master.name,Client_Master.city from Client_Master join Sale_Order on  client_master.client_no=sale_order.client_no where sale_order.order_status = 'In process';
+
+NAME                      CITY
+------------------------- ---------------
+SMITHA JAIN               MUMBAI
+RAVI SHANKAR              DELHI
+
+SQL>
+
+
+
